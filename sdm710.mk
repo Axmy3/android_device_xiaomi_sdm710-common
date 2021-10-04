@@ -105,6 +105,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio@2.0-impl:32 \
     audio.bluetooth.default \
     libbthost_if \
@@ -182,6 +183,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl:64 \
     android.hardware.drm@1.0-service \
+    android.hardware.drm@1.3 \
+		android.hardware.drm@1.0.vendor \
+	  android.hardware.drm@1.1.vendor \
+		android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.3-service.clearkey
 
 # Fingerprint
@@ -191,7 +197,7 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_HAS_FOD),true)
 PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
-    libkeymaster_portable.vendor 
+    libkeymaster_portable.vendor
 
 
 endif
@@ -204,6 +210,11 @@ PRODUCT_PACKAGES += \
     qcom.fmradio \
     qcom.fmradio.xml
 endif
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0 \
+    android.hardware.gatekeeper@1.0.vendor
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -251,6 +262,13 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1 \
+    android.hardware.keymaster@4.1.vendor \
+		android.hardware.keymaster@4.0 \
+		android.hardware.keymaster@4.0.vendor
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm710
@@ -295,7 +313,23 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0
+    netutils-wrapper-1.0 \
+		android.system.net.netd@1.1 \
+		android.system.net.netd@1.1.vendor
+
+# Neural Network
+PRODUCT_PACKAGES += \
+		android.hardware.neuralnetworks@1.0 \
+		android.hardware.neuralnetworks@1.0.vendor \
+		android.hardware.neuralnetworks@1.1 \
+		android.hardware.neuralnetworks@1.1.vendor \
+		android.hardware.neuralnetworks@1.2 \
+		android.hardware.neuralnetworks@1.2.vendor \
+        android.hardware.neuralnetworks@1.3 \
+        android.hardware.neuralnetworks@1.3.vendor 
+        
+        
+        
 
 # NFC
 ifeq ($(TARGET_HAS_NFC),true)
@@ -350,9 +384,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# Ril
+PRODUCT_PACKAGES += \
+		android.hardware.radio@1.6.vendor \
+		android.hardware.radio.config@1.3.vendor \
+	  android.hardware.radio.deprecated@1.0.vendor \
+		android.hardware.secure_element@1.2.vendor
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
+
+#Secure element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.1 \
+    android.hardware.secure_element@1.1.vendor \
+    android.hardware.secure_element@1.2 \
+    android.hardware.secure_element@1.2.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
