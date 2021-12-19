@@ -6,8 +6,10 @@ on init
     chown system system /dev/vfsspi
 
 on boot
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_pressed
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
     chown system system /sys/devices/virtual/touch/tp_dev/fod_status
+    chmod 0644 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_pressed
     chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
     chmod 0660 /sys/devices/virtual/touch/tp_dev/fod_status
 
