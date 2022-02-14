@@ -13,6 +13,7 @@ allow hal_fingerprint_default xdsp_device:chr_file r_file_perms;
 allow hal_fingerprint_default vendor_sysfs_fod:file rw_file_perms;
 
 
+allow hal_fingerprint_default sysfs_fod:file rw_file_perms;
 allow hal_fingerprint_default sysfs_graphics:dir search;
 allow hal_fingerprint_default sysfs_graphics:file r_file_perms;
 allow hal_fingerprint_default sysfs_msm_subsys:dir search;
