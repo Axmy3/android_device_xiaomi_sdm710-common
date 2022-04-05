@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+TARGET_SUPPORTS_QUICK_TAP := true
+
 BOARD_VENDOR := xiaomi
 
 COMMON_PATH := device/xiaomi/sdm710-common
