@@ -155,21 +155,11 @@ ENABLE_VENDOR_RIL_SERVICE := true
 VENDOR_SECURITY_PATCH := 2021-03-01
 
 # SELinux
-# include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 
-# BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
-# BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/public
-# BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-
-# Minimal Sepolicy
-BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy-minimal
-
-# Sepolicy
-SELINUX_IGNORE_NEVERALLOWS := true
-SELINUX_IGNORE_NEVERALLOWS_ON_USER := true
-BUILD_BROKEN_DUP_RULES := true
-RELAX_USES_LIBRARY_CHECK := true
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Symlinks
 BOARD_ROOT_EXTRA_SYMLINKS += \
